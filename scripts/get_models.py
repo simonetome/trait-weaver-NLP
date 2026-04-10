@@ -27,8 +27,13 @@ def load_model(model_name: str) -> Dict[str, object]:
     except Exception as e:
         raise RuntimeError(f"Failed to load model '{model_name}': {e}")
 
+try:
+    os.mkdir("models")
+except:
+    print("Directory models already exists")
 
 for m in model_names: 
+    
     fname = os.path.join("models",m+".pkl")
     
     if not os.path.isfile(fname):

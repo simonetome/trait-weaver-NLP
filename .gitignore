@@ -6,7 +6,7 @@ models/*
 data/*
 
 
-output/id_value_embeddings.parquet
+output/*
 
 
 # Byte-compiled / optimized / DLL files
