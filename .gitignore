@@ -6,6 +6,9 @@ models/*
 data/*
 
 
+output/id_value_embeddings*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
