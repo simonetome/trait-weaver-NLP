@@ -10,5 +10,6 @@ dependencies = [
     "polars>=1.39.3",
     "torch>=2.11.0",
     "torchvision>=0.26.0",
+    "tqdm>=4.67.3",
     "transformers>=5.5.1",
 ]
