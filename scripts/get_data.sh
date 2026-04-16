@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir -p data
+mkdir -p data/efo_embeddings
+
 
 if [ ! -e data/disease ]; then
     echo "Downloading disease info from OT release March 2026"
@@ -13,6 +15,11 @@ if [ ! -e data/association_by_datasource_direct ]; then
     rsync -rpltvz --delete rsync.ebi.ac.uk::pub/databases/opentargets/platform/26.03/output/association_by_datasource_direct data/.
 fi
 
+if [ ! -e data/efo_embeddings/embeddings* ]; then
+    wget https://github.com/simonetome/efo-embeddings/releases/download/Embeddings/embeddings.zip -P data/efo_embeddings
+    unzip -o data/efo_embeddings/embeddings.zip -d data/efo_embeddings
+    rm data/efo_embeddings/embeddings.zip
+fi
 
 
 
