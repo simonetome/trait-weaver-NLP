@@ -9,7 +9,9 @@ dependencies = [
     "jupyter>=1.1.1",
     "matplotlib>=3.10.8",
     "networkx>=3.6.1",
+    "pandas>=3.0.2",
     "polars>=1.39.3",
+    "pyarrow>=24.0.0",
     "scikit-learn>=1.8.0",
     "scipy>=1.17.1",
     "torch>=2.11.0",
@@ -17,3 +19,25 @@ dependencies = [
     "tqdm>=4.67.3",
     "transformers>=5.5.1",
 ]
+
+
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cpu", marker = "sys_platform == 'linux'" },
+  { index = "pytorch-cu130", marker = "sys_platform != 'linux'" },
+]
+torchvision = [
+  { index = "pytorch-cpu", marker = "sys_platform == 'linux'" },
+  { index = "pytorch-cu130", marker = "sys_platform != 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
