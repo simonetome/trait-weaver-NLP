@@ -15,11 +15,11 @@ if [ ! -e data/association_by_datasource_direct ]; then
     rsync -rpltvz --delete rsync.ebi.ac.uk::pub/databases/opentargets/platform/26.03/output/association_by_datasource_direct data/.
 fi
 
-if [ ! -e data/efo_embeddings/embeddings* ]; then
-    wget https://github.com/simonetome/efo-embeddings/releases/download/Embeddings/embeddings.zip -P data/efo_embeddings
-    unzip -o data/efo_embeddings/embeddings.zip -d data/efo_embeddings
-    rm data/efo_embeddings/embeddings.zip
-fi
+#if [ ! -e data/efo_embeddings/embeddings* ]; then
+wget https://github.com/simonetome/efo-embeddings/releases/download/Embeddings/embeddings_256.zip -P data/efo_embeddings
+unzip -o data/efo_embeddings/embeddings_256.zip -d data/efo_embeddings
+rm data/efo_embeddings/embeddings_256.zip
+#fi
 
 
 
