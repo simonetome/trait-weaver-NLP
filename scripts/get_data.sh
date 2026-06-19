@@ -15,6 +15,12 @@ if [ ! -e data/association_by_datasource_direct ]; then
     rsync -rpltvz --delete rsync.ebi.ac.uk::pub/databases/opentargets/platform/26.03/output/association_by_datasource_direct data/.
 fi
 
+if [ ! -e data/association_by_datasource_indirect ]; then
+    echo "Downloading disease info from OT release March 2026"
+    rsync -rpltvz --delete rsync.ebi.ac.uk::pub/databases/opentargets/platform/26.03/output/association_by_datasource_indirect data/.
+fi
+
+
 #if [ ! -e data/efo_embeddings/embeddings* ]; then
 wget https://github.com/simonetome/efo-embeddings/releases/download/Embeddings/embeddings_256.zip -P data/efo_embeddings
 unzip -o data/efo_embeddings/embeddings_256.zip -d data/efo_embeddings
