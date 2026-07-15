@@ -6,7 +6,7 @@ models/*
 data/*
 
 
-output
+output/*
 
 
 # Byte-compiled / optimized / DLL files
