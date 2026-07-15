@@ -17,9 +17,9 @@ fi
 
 
 #if [ ! -e data/efo_embeddings/embeddings* ]; then
-wget https://github.com/simonetome/efo-embeddings/releases/download/Embeddings/embeddings_256.zip -P data/efo_embeddings
-unzip -o data/efo_embeddings/embeddings_256.zip -d data/efo_embeddings
-rm data/efo_embeddings/embeddings_256.zip
+#wget https://github.com/simonetome/efo-embeddings/releases/download/Embeddings/embeddings_256.zip -P data/efo_embeddings
+#unzip -o data/efo_embeddings/embeddings_256.zip -d data/efo_embeddings
+#rm data/efo_embeddings/embeddings_256.zip
 #fi
 
 
