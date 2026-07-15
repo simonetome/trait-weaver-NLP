@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p data
+mkdir -p output
 mkdir -p data/efo_embeddings
 
 if [ ! -e data/disease ]; then
