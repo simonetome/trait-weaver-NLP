@@ -2350,7 +2350,7 @@ wheels = [
 [[package]]
 name = "trait-weaver-nlp"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "ipykernel" },
     { name = "jupyter" },
@@ -2359,6 +2359,7 @@ dependencies = [
     { name = "pandas" },
     { name = "polars" },
     { name = "pyarrow" },
+    { name = "rich" },
     { name = "scikit-learn" },
     { name = "scipy" },
     { name = "torch", version = "2.11.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform == 'linux'" },
@@ -2378,6 +2379,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=3.0.2" },
     { name = "polars", specifier = ">=1.39.3" },
     { name = "pyarrow", specifier = ">=24.0.0" },
+    { name = "rich", specifier = ">=14.3.3" },
     { name = "scikit-learn", specifier = ">=1.8.0" },
     { name = "scipy", specifier = ">=1.17.1" },
     { name = "torch", marker = "sys_platform != 'linux'", specifier = ">=2.11.0", index = "https://download.pytorch.org/whl/cu130" },

@@ -1,7 +1,7 @@
 from typing import Dict
 import torch
 import numpy as np
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 from numpy.typing import ArrayLike
 
 
