@@ -2,12 +2,11 @@ import polars as pl
 import pandas as pd
 import pickle
 import os, sys
-from transformers import AutoTokenizer, AutoModel  
+import torch
 from trait_weaver_nlp.nlp_embeddings import eval_embeddings
 
 import numpy as np
 import pickle
-import torch
 import zipfile
 from rich import print
 from rich.console import Console
