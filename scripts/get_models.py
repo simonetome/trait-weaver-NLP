@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModel, AutoModelForMaskedLM
 from typing import Dict
 import pickle
 import os 
-
+from sentence_transformers import SentenceTransformer
 
 model_names = {
     "BioClinicalBERT" : "emilyalsentzer/Bio_ClinicalBERT",
@@ -12,7 +12,9 @@ model_names = {
     "SapBERT-from-PubMedBERT-fulltext": "cambridgeltl/SapBERT-from-PubMedBERT-fulltext"
 }
 
-
+sentence_models = {
+    'BioLORD-2023': 'FremyCompany/BioLORD-2023'
+}
 
 def load_model(model_name: str) -> Dict[str, object]:
     try:
@@ -46,3 +48,12 @@ for m in model_names:
 with open("models/model_names.pkl", "wb") as f:
            pickle.dump(model_names, f)
 
+
+fname = os.path.join("models","BioLORD-2023.pkl")
+
+if not os.path.isfile(fname):
+    print("Loading: "+fname)
+    model = SentenceTransformer('FremyCompany/BioLORD-2023')
+
+    with open(fname, "wb") as f:
+        pickle.dump(model, f)

@@ -3,8 +3,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 from numpy.typing import ArrayLike
-
-
+from sentence_transformers import SentenceTransformer
 
 def eval_embeddings(
     model: object,
@@ -73,3 +72,13 @@ def eval_embeddings(
     all_embs = np.concatenate(all_embs, axis=0)
 
     return all_embs
+
+
+def eval_sentence_embeddings(
+    model: object,
+    input_texts: ArrayLike,
+    batch_size: int = 16,
+):
+    embeddings = model.encode(input_texts, batch_size=batch_size)
+    return embeddings
+
