@@ -13,7 +13,7 @@ model_names = {
 }
 
 sentence_models = {
-    'BioLORD-2023': 'FremyCompany/BioLORD-2023'
+    'BioLORD-2023': 'FremyCompany/BioLORD-2023',
 }
 
 def load_model(model_name: str) -> Dict[str, object]:
@@ -48,12 +48,26 @@ for m in model_names:
 with open("models/model_names.pkl", "wb") as f:
            pickle.dump(model_names, f)
 
-
+#=============================================
+# BioLORD
+#=============================================
 fname = os.path.join("models","BioLORD-2023.pkl")
 
 if not os.path.isfile(fname):
     print("Loading: "+fname)
     model = SentenceTransformer('FremyCompany/BioLORD-2023')
+
+    with open(fname, "wb") as f:
+        pickle.dump(model, f)
+
+#===============================================
+# Qwen
+#===============================================
+fname = os.path.join("models","Qwen3-Embedding-0.6B.pkl")
+
+if not os.path.isfile(fname):
+    print("Loading: "+fname)
+    model = SentenceTransformer("Qwen/Qwen3-Embedding-0.6B")
 
     with open(fname, "wb") as f:
         pickle.dump(model, f)
