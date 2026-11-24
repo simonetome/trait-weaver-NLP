@@ -42,7 +42,7 @@ sapBERT_model = load_model('SapBERT-from-PubMedBERT-fulltext')
 #===========================================================================
 
 console.print("Loading diseases", style = "bold yellow")
-disease_ot = pl.read_parquet("data/disease/disease.parquet").to_pandas()
+disease_ot = pl.read_parquet("data/disease/00000000.parquet").to_pandas()
 disease_ot = disease_ot[['id','name','description','exactSynonyms']]
 
 

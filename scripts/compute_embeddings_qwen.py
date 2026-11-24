@@ -34,7 +34,7 @@ with open(path,"rb") as file_:
 #===========================================================================
 
 console.print("Loading diseases", style = "bold yellow")
-disease_ot = pl.read_parquet("data/disease/disease.parquet").to_pandas()
+disease_ot = pl.read_parquet("data/disease/00000000.parquet").to_pandas()
 disease_ot = disease_ot[['id','name','description','exactSynonyms']]
 
 
@@ -108,4 +108,3 @@ with zipfile.ZipFile("output/nlp_embeddings_qwen.zip", 'w', zipfile.ZIP_DEFLATED
     zf.write("output/nlp_embeddings_qwen.parquet", arcname="nlp_embeddings_qwen.parquet")
 
 console.print("Success!", style="bold green")
-
