@@ -6,6 +6,9 @@
 
 Everything from Repo path
 
+
+**N.B.:** for compatibility with windows systems, aws cli is used to fetch data from OTAR.
+
 Get data and models
 - sh scripts/get_data.sh
 - uv run python scripts/get_models.py
